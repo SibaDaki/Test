@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container my-5">
+        <h3> Update Student</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-8">
+                    <form action="#" th:action="@{/services/update/{id}(id=${serviceEntity.id})}" th:object="${serviceEntity}" method="post">
+                        <div class="row">
+                           <div class="form-group col-md-8">
+                                <label for="serviceName" class="col-form-label">Service Name</label> <input type="text" th:field="*{serviceName}" class="form-control" id="serviceName" placeholder="ServiceName"> <span th:if="${#fields.hasErrors('serviceName')}" th:errors="*{serviceName}}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="adGroup" class="col-form-label"> AD Group</label> <input type="text" th:field="*{adGroup}" class="form-control" id="adGroup" placeholder="ADGroup"> <span th:if="${#fields.hasErrors('adGroup')}" th:errors="*{adGroup}}" class="text-danger"></span>
+                            </div>
+							<div class="form-group col-md-8">
+                                <label for="username" class="col-form-label">Username</label> <input type="text" th:field="*{username}" class="form-control" id="username" placeholder="Username"> <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="text-danger"></span>
+                            </div>
+							<div class="form-group col-md-8">
+                                <label for="pasword" class="col-form-label">Password</label> <input type="text" th:field="*{pasword}" class="form-control" id="pasword" placeholder="Password"> <span th:if="${#fields.hasErrors('pasword')}" th:errors="*{pasword}" class="text-danger"></span>
+                            </div>
+							<div class="form-group col-md-8">
+                                <label for="contractID" class="col-form-label">Contract ID</label> <input type="text" th:field="*{contractID}" class="form-control" id="contractID" placeholder="ContractID"> <span th:if="${#fields.hasErrors('contractID')}" th:errors="*{contractID}" class="text-danger"></span>
+                            </div>
+							<div class="form-group col-md-8">
+                                <label for="endPoint" class="col-form-label">End Point</label> <input type="text" th:field="*{endPoint}" class="form-control" id="endPoint" placeholder="EndPoint"> <span th:if="${#fields.hasErrors('endPoint')}" th:errors="*{endPoint}" class="text-danger"></span>
+                            </div>
+							<div class="form-group col-md-8">
+                                <label for="l7EndPointInt" class="col-form-label">INT L7 End Point</label> <input type="text" th:field="*{l7EndPointInt}" class="form-control" id="l7EndPointInt" placeholder="L7EndPointInt"> <span th:if="${#fields.hasErrors('l7EndPointInt')}" th:errors="*{l7EndPointInt}" class="text-danger"></span>
+                            </div>
+							<div class="form-group col-md-8">
+                                <label for="l7EndPointExt" class="col-form-label">EXT L7 End Point</label> <input type="text" th:field="*{l7EndPointExt}" class="form-control" id="l7EndPointExt" placeholder="L7EndPointExt"> <span th:if="${#fields.hasErrors('l7EndPointExt')}" th:errors="*{l7EndPointExt}" class="text-danger"></span>
+                            </div>
+							
+                            <div class="form-group col-md-8">
+                                <label for="consumer" class="col-form-label">Consumer</label> <input type="text" th:field="*{consumer}" class="form-control" id="consumer" placeholder="Consumer"> <span th:if="${#fields.hasErrors('consumer')}" th:errors="*{consumer}" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-8">
+                                <input type="submit" class="btn btn-primary" value="Update Service">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
